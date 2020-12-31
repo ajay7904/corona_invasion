@@ -16,3 +16,17 @@ class Setting:
         self.fleet_direction = 1
 
         self.ship_limit = 5
+
+    def increase_game_level(self):
+        if self.alien_speed_factor <= 0.6:
+            self.alien_speed_factor += 0.025
+        if self.fleet_drop_speed <= 18:
+            self.fleet_drop_speed += 0.025
+        if self.bullets_allowed <= 7:
+            self.bullets_allowed += 1
+
+    def restore_game_level(self):
+        self.alien_speed_factor = 0.3
+        self.fleet_drop_speed = 15
+        self.bullets_allowed = 3
+

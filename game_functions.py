@@ -59,6 +59,7 @@ def check_bullet_alien_collisions(stats, game_settings, screen, ship, alien_grou
         print('Bullets Fired: ' + str(stats.bullets_fired) + '   ' + 'Corona Killed: ' + str(stats.aliens_killed))
         sleep(1)
         bullets_group.empty()
+        game_settings.increase_game_level()
         # pygame.event.clear()
         creat_alien_fleet(game_settings, screen, ship, alien_group)
         ship.center_ship()
@@ -119,6 +120,7 @@ def ship_hit(game_settings, stats, screen, ship, alien_group, bullets_group, you
     alien_group.empty()
     bullets_group.empty()
     print('You Lost..!!')
+    game_settings.restore_game_level()
     print('Bullets Fired: ' + str(stats.bullets_fired) + '   ' + 'Corona Killed: ' + str(stats.aliens_killed))
     if stats.ships_left > 0:
         you_lose.blitme()
