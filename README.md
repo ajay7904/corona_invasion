@@ -7,4 +7,5 @@ Requirement
 
 Run
 Windows: >python alien_invasion.py
+
 Linux: >python3 alien_invasion.py
