@@ -95,8 +95,9 @@ def create_vaccine(screen, vaccine_group, vac_no):
     vaccine.rect.x = 10 + 2 * vaccine.rect.width * vac_no
 
 def create_vaccine_rack(screen, vaccine_group, stats):
-    for vac_no in range(stats.ships_left):
-        create_vaccine(screen, vaccine_group, vac_no)
+    if stats.ships_left > 0:
+        for vac_no in range(stats.ships_left-1):
+            create_vaccine(screen, vaccine_group, vac_no)
 
 def update_vaccine_rack(screen, vaccine_group, stats):
     vaccine_group.empty()

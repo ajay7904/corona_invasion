@@ -35,6 +35,7 @@ def run_game():
             gf.update_screen(stats, game_settings, screen, ship, bullets_group, alien_group, game_over, you_win, vaccine_group)
         elif stats.ships_left == 0:
             print('Game Over..!!!')
+            game_settings.restore_game_level()
             print('Bullets Fired: ' + str(stats.bullets_fired) + '   ' + 'Corona Killed: ' + str(stats.aliens_killed))
             game_over.blitme()
             stats.reset_stats()
